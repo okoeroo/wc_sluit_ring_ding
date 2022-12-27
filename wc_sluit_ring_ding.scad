@@ -6,38 +6,40 @@ $fs = 0.4;
 
 
 // Buiten diameter onderschijf
-A = 475;
+A = 47.5;
 
 // Onderschijf, binnenring (grootste diameter)
-B = 231;
+B = 23.1;
 
 // Hoogte onderschijf
-C = 11;
+C = 1.1;
 
 // Innerring hoogte.
-F = 20;
+F = 2.0;
 
 // Buiten maat top
-D = 255;
+D = 25.5;
 
 // Midden gat/buis (smalste diameter)
-E = 222;
+E = 22.2;
 
 
-K = 221;
+K = 22.1;
 
 // Top hoogte, start positie boven onderschijf
-HEIGHT = 71;
+HEIGHT = 7.1;
 Y = HEIGHT - C;
 
 
 h2 = 0;
 
 
-BONUS_STRENGTH = 80;
-TIGHTENING_RING_THICKNESS = 5;
+BONUS_STRENGTH = 8.0;
+TIGHTENING_RING_THICKNESS = 0.5;
 
-
+// Tightening chorus ring
+wheel_radius = 24.4;
+tyre_diameter = 2.4;
 
 
 
@@ -50,18 +52,18 @@ difference() {
         difference() {
             translate([0, 0, C])
                 cylinder(h=Y, 
-                         r1=D + 30 + BONUS_STRENGTH, 
-                         r2=D + 30);
+                         r1=D + 3.0 + BONUS_STRENGTH, 
+                         r2=D + 3.0);
 
             translate([0, 0, C - 0.01])
-                cylinder(h = Y + 0.02, r = D + 30);
+                cylinder(h = Y + 0.02, r = D + 3.0);
         }
 
         color([1.0,0.8,1.0]) // pink
         difference() {
 
             translate([0, 0, C])
-                cylinder(h = Y, r = D + 30);
+                cylinder(h = Y, r = D + 3.0);
 
             translate([0, 0, C - 0.01])
                 cylinder(h = Y + 0.02, r = D);
@@ -69,12 +71,9 @@ difference() {
         
         
         
-        // Tightening chorus ring
-        wheel_radius = 244;
-        tyre_diameter = 24;
-        
+        // Tightening chorus ring       
         color([1.0,1.0,0.0]) // yellow
-        translate([0, 0, HEIGHT - 30]) 
+        translate([0, 0, HEIGHT - 3.0]) 
         rotate_extrude(angle=360) {
             translate([wheel_radius - tyre_diameter/2, 0])
                 circle(d=tyre_diameter);
