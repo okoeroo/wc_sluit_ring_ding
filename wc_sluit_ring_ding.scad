@@ -98,19 +98,7 @@ difference() {
             translate([0, 0, C - 0.01])
                 cylinder(h = Y + 0.02, r = E);
         }
-    
-        
-        // Mid
-        /* 
-        difference() {
-            color([0.0,0.8,0.0])
-            translate([0, 0, F])
-                cylinder(h = 4, r = D);
-        
-            translate([0, 0, -0.01])
-                cylinder(h = 50 + 0.02, r = E);
-        }
-        */
+
         
         
         // Onderschijf
@@ -130,10 +118,3 @@ difference() {
     cylinder(h = F, r = B);
 }
 
-
-
-//tyre_diameter = 60;
-//rotate_extrude(angle=360) {
-//    translate([wheel_radius - tyre_diameter/2, 0])
-//        circle(d=tyre_diameter);
-//}
