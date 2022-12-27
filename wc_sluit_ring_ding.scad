@@ -43,6 +43,8 @@ TIGHTENING_RING_THICKNESS = 5;
 
 difference() {
     union() {
+        
+        
         // Reenforcement
         color([0.5,0.6,0.4]) // greenish
         difference() {
@@ -54,6 +56,7 @@ difference() {
             translate([0, 0, C - 0.01])
                 cylinder(h = Y + 0.02, r = D + 30);
         }
+
         color([1.0,0.8,1.0]) // pink
         difference() {
 
@@ -63,6 +66,7 @@ difference() {
             translate([0, 0, C - 0.01])
                 cylinder(h = Y + 0.02, r = D);
         }
+        
         
         
         // Tightening chorus ring
